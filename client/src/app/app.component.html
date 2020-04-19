@@ -1,0 +1,26 @@
+<div class="wrapper">
+
+  <span class="responses">
+    <h4>Responses</h4>
+    <h6>it will run to 100 (according to back end)</h6>
+    <ng-container *ngIf="persons$ | async as persons">
+      <p *ngFor="let p of persons">{{p.firstName}} {{p.lastName}}</p>
+    </ng-container>
+  </span>
+
+  <span class="edits">
+    <p>editing these will alter the reponse from backend</p>
+    <form [formGroup]="formGroup">
+      <label>first name</label>
+      <input type="text" formControlName="firstName">
+      <p class="delayed-value">{{firstName}}</p>
+      <label>last name</label>
+      <input type="text" formControlName="lastName">
+      <p class="delayed-value">{{lastName}}</p>
+    </form>
+
+  </span>
+
+</div>
+
+

@@ -38,7 +38,7 @@ export class PersonTemplateDataService extends DefaultDataService<Person> {
   public getAll(): Observable<Array<Person>> {
 
     return this.webSocketService.socket.pipe(
-      filter(({type}) => type === this.personsTemplate),   // this service should only handle messages with type 'persontTemplate'
+      filter(({type}) => type === this.personsTemplate),   // this service should only handle messages with type 'personTemplate'
       map(({payload: {id, firstName, lastName}}) => ([
         {
           id,
